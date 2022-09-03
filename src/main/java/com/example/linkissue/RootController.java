@@ -17,10 +17,8 @@ public class RootController {
     public ResponseEntity<String> getMyResource(@RequestParam(value = "requiredparam") String requiredparam,
                                                 @RequestParam(value = "optionalparam", required = false) String optionalparam) {
 
-        Link link = linkTo(methodOn(RootController.class).getMyResource(null, null)).withSelfRel();
-
         UriComponentsBuilder builder = linkTo(methodOn(RootController.class).getMyResource(null, null)).toUriComponentsBuilder();
 
-        return ResponseEntity.ok(link.getHref());
+        return ResponseEntity.ok("Done");
     }
 }
